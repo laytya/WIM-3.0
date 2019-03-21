@@ -1,0 +1,1502 @@
+------------------------------------------------------------------------
+r141 | pazza | 2008-12-02 02:53:32 +0000 (Tue, 02 Dec 2008) | 15 lines
+Changed paths:
+   A /tags/v3.0.5b (from /trunk:140)
+
+Tagged v3.0.5b
+
+*Fixed: Who lookups wouldn't update if already cached.
+*Fixed: Default Spamfilter wasn't working as intended.
+*Loading of skins also updates character info as well.
+*Fixed the history viewer. For real this time? (Thanks Stewart)
+*History text view loads correctly now on first click. (Thanks Stewart)
+*History text views are stripped of all colors and emoticons.
++Added Russian translations. (Thanks Stingersoft)
+*Fixed: System message of user coming online wasn't being handled correctly.
++Added libraries to optional dependencies to allow for disembedded addons.
+*Moved Window Alpha option from Window Settings to Display Settings.
++Added Window Strata option to Window Settings.
+*Fixed: History viewer wasn't loading for entire realm.
+*Fixed: Tabs now honor focus as intended. (Thanks Stewart)
+------------------------------------------------------------------------
+r140 | pazza | 2008-12-02 02:51:06 +0000 (Tue, 02 Dec 2008) | 1 line
+Changed paths:
+   M /trunk/ChangeLog.lua
+   M /trunk/Localization/enUS.lua
+   M /trunk/Modules/Sounds.lua
+   M /trunk/Sources/Options/OptionsTookKit.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+
+prep for release.
+------------------------------------------------------------------------
+r139 | pazza | 2008-12-01 23:10:03 +0000 (Mon, 01 Dec 2008) | 5 lines
+Changed paths:
+   M /trunk/ChangeLog.lua
+   M /trunk/Modules/Emoticons.lua
+   M /trunk/Modules/History.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/Sources/Options/Options.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.toc
+
+*Fixed: System message of user coming online wasn't being handled correctly.
++Added libraries to optional dependencies to allow for disembedded addons.
+*Moved Window Alpha option from Window Settings to Display Settings.
++Added Window Strata option to Window Settings.
+*Fixed: History viewer wasn't loading for entire realm.
+------------------------------------------------------------------------
+r138 | pazza | 2008-12-01 20:23:02 +0000 (Mon, 01 Dec 2008) | 1 line
+Changed paths:
+   M /trunk/ChangeLog.lua
+   M /trunk/Localization/ruRU.lua
+   M /trunk/Sources/TabHandler.lua
+   M /trunk/Sources/WindowHandler.lua
+
+troubleshooting tabs and focus rules.
+------------------------------------------------------------------------
+r137 | pazza | 2008-11-21 04:49:09 +0000 (Fri, 21 Nov 2008) | 3 lines
+Changed paths:
+   M /trunk/ChangeLog.lua
+   M /trunk/Modules/Emoticons.lua
+   M /trunk/Modules/History.lua
+   M /trunk/Modules/TimeStamps.lua
+   M /trunk/Sources/WindowHandler.lua
+
+*Fixed the history viewer. For real this time? (Thanks Stewart)
+*History text view loads correctly now on first click. (Thanks Stewart)
+*History text views are stripped of all colors and emoticons.
+------------------------------------------------------------------------
+r136 | pazza | 2008-11-19 22:36:03 +0000 (Wed, 19 Nov 2008) | 3 lines
+Changed paths:
+   M /trunk/ChangeLog.lua
+   M /trunk/Modules/Filters.lua
+   M /trunk/Sources/Skinner.lua
+   M /trunk/Sources/TabHandler.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+
+*Fixed: Who lookups wouldn't update if already cached.
+*Fixed: Default Spamfilter wasn't working as intended.
+*Loading of skins also updates character info as well.
+------------------------------------------------------------------------
+r134 | pazza | 2008-11-12 20:40:39 +0000 (Wed, 12 Nov 2008) | 16 lines
+Changed paths:
+   M /trunk/ChangeLog.lua
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/WIM.lua
+
+*History frame was named incorrectly. 'WIM3_HistoryFrame' is its new name.
+*Socket only compresses large transmissions to minimize resource usage.
+*Optimized tabs.
+*Tabs scroll correctly now.
+*Location button on shortcut uses special W2W tooltip if applicable.
+*History viewer wasn't displaying realms which had non-alphanumeric characters in it.
+*Fixed bug where alerts where referencing minimap icon even though it hasn't been loaded.
++WIM now comes packaged with LibBabble-TalentTree-3.0 and further defines class information.
++Added W2W Talent Spec sharing.
+*Lowered options frame strata from DIALOG to MEDIUM.
+*Fixed animation crash (Caused by blizzards ScrollingMessageFrame).
++WIM's widget API now calls UpdateSkin method of widget if available upon skin loading.
+*Long messages are now split correclty without breaking links.
+*LastTellTarget is not set correctly when receiving AFK & DND responses.
++WIM now uses LibWho-2.0. WhoLib-1.0 is not considered depricated.
+-Removed dependencies(libs) of all Ace2 addons including Deformat.
+------------------------------------------------------------------------
+r133 | pazza | 2008-11-11 06:25:45 +0000 (Tue, 11 Nov 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/WhisperEngine.lua
+
+* modified event handlers to preserve nil arg values.
+------------------------------------------------------------------------
+r132 | pazza | 2008-11-11 05:27:10 +0000 (Tue, 11 Nov 2008) | 2 lines
+Changed paths:
+   M /trunk/.pkgmeta
+   M /trunk/ChangeLog.lua
+   M /trunk/Libs
+   M /trunk/Libs/Includes.xml
+   M /trunk/Modules/Filters.lua
+   M /trunk/Modules/Includes.xml
+   M /trunk/Modules/W2W.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+   M /trunk/WIM.toc
+
++WIM now uses LibWho-2.0. WhoLib-1.0 is not considered depricated.
+-Removed dependencies(libs) of all Ace2 addons including Deformat.
+------------------------------------------------------------------------
+r131 | pazza | 2008-11-10 22:09:27 +0000 (Mon, 10 Nov 2008) | 3 lines
+Changed paths:
+   M /trunk/ChangeLog.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/Skinner.lua
+   M /trunk/Sources/ToolBox.lua
+   M /trunk/Sources/WindowHandler.lua
+
+*WIM's widget API updated to call widget:UpdateSkin() when provided.
+*messages sent which are greater than 255 characters are now split correctly preserving links and avoiding fragmented escape codes.
+*AFK & DND messages now set last tell target accordingly.
+------------------------------------------------------------------------
+r130 | pazza | 2008-11-09 07:24:17 +0000 (Sun, 09 Nov 2008) | 1 line
+Changed paths:
+   M /trunk/ChangeLog.lua
+   M /trunk/Sources/Options/Options.lua
+   M /trunk/Sources/WindowHandler.lua
+
+testing an idea
+------------------------------------------------------------------------
+r129 | pazza | 2008-11-06 22:13:23 +0000 (Thu, 06 Nov 2008) | 1 line
+Changed paths:
+   M /trunk/Sources/WindowHandler.lua
+
+I think i give up on the crash... It has to be a low level error.
+------------------------------------------------------------------------
+r128 | pazza | 2008-11-06 21:55:29 +0000 (Thu, 06 Nov 2008) | 1 line
+Changed paths:
+   M /trunk/Sources/WindowHandler.lua
+
+again
+------------------------------------------------------------------------
+r127 | pazza | 2008-11-06 21:46:28 +0000 (Thu, 06 Nov 2008) | 1 line
+Changed paths:
+   M /trunk/Sources/WindowHandler.lua
+
+Am I pissing off the Repo Yet? Crash Test away!
+------------------------------------------------------------------------
+r126 | pazza | 2008-11-06 21:35:36 +0000 (Thu, 06 Nov 2008) | 1 line
+Changed paths:
+   M /trunk/Sources/WindowHandler.lua
+
+crash test
+------------------------------------------------------------------------
+r125 | pazza | 2008-11-06 21:29:48 +0000 (Thu, 06 Nov 2008) | 2 lines
+Changed paths:
+   M /trunk/ChangeLog.lua
+   M /trunk/Libs/Includes.xml
+   M /trunk/Localization/enUS.lua
+   M /trunk/Modules/W2W.lua
+   M /trunk/Sources/Constants.lua
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+
+crash test
++W2W Talent Spec service.
+------------------------------------------------------------------------
+r124 | pazza | 2008-11-06 19:22:57 +0000 (Thu, 06 Nov 2008) | 1 line
+Changed paths:
+   M /trunk/.pkgmeta
+   M /trunk/ChangeLog.lua
+   M /trunk/Libs
+
+Updated svn:external and pkgmeta to import LibBabble-TalentTree-3.0
+------------------------------------------------------------------------
+r123 | pazza | 2008-11-06 15:09:22 +0000 (Thu, 06 Nov 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/MinimapIcon.lua
+   M /trunk/Sources/WindowHandler.lua
+
+* fixed error with alerts when minimap icon is disabled.
+------------------------------------------------------------------------
+r122 | pazza | 2008-11-06 00:13:03 +0000 (Thu, 06 Nov 2008) | 1 line
+Changed paths:
+   M /trunk/Sources/WindowHandler.lua
+
+added some debuggout output to help crash detect
+------------------------------------------------------------------------
+r121 | pazza | 2008-11-05 23:55:14 +0000 (Wed, 05 Nov 2008) | 1 line
+Changed paths:
+   M /trunk/Sources/WindowHandler.lua
+
+crash test
+------------------------------------------------------------------------
+r120 | pazza | 2008-11-05 20:15:06 +0000 (Wed, 05 Nov 2008) | 1 line
+Changed paths:
+   M /trunk/Sources/WindowHandler.lua
+
+crash test.
+------------------------------------------------------------------------
+r119 | pazza | 2008-11-05 20:08:30 +0000 (Wed, 05 Nov 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/ShortcutBar.lua
+   M /trunk/Modules/W2W.lua
+   M /trunk/Sources/WindowHandler.lua
+
+crash test
+------------------------------------------------------------------------
+r118 | pazza | 2008-11-05 19:49:03 +0000 (Wed, 05 Nov 2008) | 1 line
+Changed paths:
+   M /trunk/ChangeLog.lua
+   M /trunk/Modules/History.lua
+   M /trunk/Sources/ToolBox.lua
+   M /trunk/Sources/WindowHandler.lua
+
+- crash test.
+------------------------------------------------------------------------
+r117 | pazza | 2008-10-30 02:01:40 +0000 (Thu, 30 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/ChangeLog.lua
+   M /trunk/Modules/ShortcutBar.lua
+   M /trunk/Modules/W2W.lua
+   M /trunk/Sources/Locale.lua
+   M /trunk/Sources/TabHandler.lua
+
+*fixed scrolling of tabs. and added mousewheel support.
+------------------------------------------------------------------------
+r116 | pazza | 2008-10-29 20:07:30 +0000 (Wed, 29 Oct 2008) | 3 lines
+Changed paths:
+   M /trunk/ChangeLog.lua
+   M /trunk/Modules/History.lua
+   M /trunk/Sources/Socket.lua
+   M /trunk/Sources/TabHandler.lua
+   M /trunk/Sources/WindowHandler.lua
+
+*Socket only compresses large transmissions to minimize resource usage.
+*Attempt at stopping minimize crashing.
+*Attempt at fixing tab and lag issue.
+------------------------------------------------------------------------
+r115 | pazza | 2008-10-27 17:49:40 +0000 (Mon, 27 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/ChangeLog.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+   M /trunk/WIM.toc
+
+Crash debugging - Take 1
+------------------------------------------------------------------------
+r113 | pazza | 2008-10-23 21:35:09 +0000 (Thu, 23 Oct 2008) | 14 lines
+Changed paths:
+   M /trunk/WIM.lua
+
+    +Added Tab Management module. (Auto grouping of windows.)
+    *Avoid any chances of dividing by 0 in window animation.
+    *Changed window behavior priorities to: Arena, Combat, PvP, Raid, Party, Resting Other.
+    *Fixed bug when running WIM on WOTLK.
+    +W2W Typing notifiction is triggered from the default chat frame now too.
+    -W2W will no longer notify user as typing if user is typing a slash command.
+    *Fixed a resizing bug when using tabs. Entire tab group inherrits size until removed.
+    +Added ChangeLog.lua (contains release information to be used later.)
+    *Corrected shaman class color.
+    *Focus gain also respects Blizzard's ChatEditFrame.
+    *Filters are no longer trimmed.
+    +Added deDE localizations.
+    +Added sound options.
+    +Added some stock sound files.
+------------------------------------------------------------------------
+r112 | pazza | 2008-10-23 21:33:46 +0000 (Thu, 23 Oct 2008) | 2 lines
+Changed paths:
+   M /trunk/ChangeLog.lua
+   M /trunk/Localization/enUS.lua
+   M /trunk/Modules/Sounds.lua
+   A /trunk/Sounds/ichatIn.mp3
+   A /trunk/Sounds/ichatOut.mp3
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/Sources/Options/OptionsTookKit.lua
+   M /trunk/WIM.lua
+
++Added sound options.
++Added some stock sound files.
+------------------------------------------------------------------------
+r111 | pazza | 2008-10-22 20:48:29 +0000 (Wed, 22 Oct 2008) | 3 lines
+Changed paths:
+   M /trunk/ChangeLog.lua
+   M /trunk/Localization/deDE.lua
+   M /trunk/Modules/Filters.lua
+   M /trunk/Sources/WindowHandler.lua
+
+*Focus gain also respects Blizzard's ChatEditFrame.
+*Filters are no longer trimmed.
++Added deDE localizations.
+------------------------------------------------------------------------
+r110 | pazza | 2008-10-21 21:12:06 +0000 (Tue, 21 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/Filters.lua
+
+forgot to actually remove that filter... there you go.
+------------------------------------------------------------------------
+r109 | pazza | 2008-10-21 21:09:43 +0000 (Tue, 21 Oct 2008) | 6 lines
+Changed paths:
+   A /trunk/ChangeLog.lua
+   M /trunk/Modules/W2W.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/Constants.lua
+   M /trunk/Sources/TabHandler.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.toc
+
+-Removed "^/" from default filters. [/wim clear filters] to take effect.
++W2W Typing notifiction is triggered from the default chat frame now too.
+-W2W will no longer notify user as typing if user is typing a slash command.
+*Fixed a resizing bug when using tabs. Entire tab group inherrits size until removed.
++Added ChangeLog.lua (contains release information to be used later.)
+*Corrected shaman class color.
+------------------------------------------------------------------------
+r108 | pazza | 2008-10-20 21:22:33 +0000 (Mon, 20 Oct 2008) | 3 lines
+Changed paths:
+   M /trunk/Localization/enUS.lua
+   M /trunk/Modules/TabManagement.lua
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/Sources/TabHandler.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+
+- Added Tab Management module & associated options
+- Updated enUS translation reflecting additions from new options.
+- tabs are no longer indexed by name but rather the window's objects.
+------------------------------------------------------------------------
+r107 | pazza | 2008-10-20 02:43:00 +0000 (Mon, 20 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Sources/StateHandler.lua
+
+- Changed state handler priority to: Arena, Combat, Pvp, Raid, Party, Resting, Other.
+------------------------------------------------------------------------
+r106 | pazza | 2008-10-20 02:32:50 +0000 (Mon, 20 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/Sounds.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/WindowHandler.lua
+
+- Works on WOTLK again. odd really. but simple fix.
+------------------------------------------------------------------------
+r105 | pazza | 2008-10-16 21:49:20 +0000 (Thu, 16 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Localization/enUS.lua
+   M /trunk/Modules/Filters.lua
+   M /trunk/Sources/Locale.lua
+   M /trunk/WIM.lua
+   M /trunk/WIM.toc
+
+- Declared all strings that can be localized so far in case translators feel like getting started :-)
+------------------------------------------------------------------------
+r103 | pazza | 2008-10-16 05:59:39 +0000 (Thu, 16 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/WIM.lua
+
+Prep for package
+------------------------------------------------------------------------
+r102 | pazza | 2008-10-16 05:44:43 +0000 (Thu, 16 Oct 2008) | 3 lines
+Changed paths:
+   M /trunk/Modules/History.lua
+   M /trunk/Modules/Negotiate.lua
+   M /trunk/Modules/W2W.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/Options/OptionsTookKit.lua
+   M /trunk/Sources/Socket.lua
+
+- optimized w2w widget.
+- removed tbc compatibility hacks.
+- revised negotiate module
+------------------------------------------------------------------------
+r101 | pazza | 2008-10-15 23:51:51 +0000 (Wed, 15 Oct 2008) | 4 lines
+Changed paths:
+   M /trunk/.pkgmeta
+   M /trunk/Libs
+   M /trunk/Libs/Includes.xml
+   M /trunk/Modules/Sounds.lua
+   A /trunk/Sources/Compression.lua
+   M /trunk/Sources/Includes.xml
+   M /trunk/Sources/Socket.lua
+   M /trunk/WIM.lua
+
+- Fixed error when joining party/raid.
+- Removed library LibCompress from package. Huffman algorithm created way too much garbage. Instead I moved the huffman code into WIM itself and optimized it. Runs a lot cleaner as well as escapes properly for save transmissions over addon channels.
+- other various tweaks to remove garbage.
+*Update requires game restart*
+------------------------------------------------------------------------
+r100 | pazza | 2008-10-15 06:53:47 +0000 (Wed, 15 Oct 2008) | 2 lines
+Changed paths:
+   M /trunk/Modules/History.lua
+   M /trunk/Modules/Negotiate.lua
+   M /trunk/Modules/Sounds.lua
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/WIM.lua
+   M /trunk/WIM.toc
+
+- fixed error when joining party/raid.
+- fixed bug where scroll frames weren't scrolling.
+------------------------------------------------------------------------
+r97 | pazza | 2008-10-14 06:32:10 +0000 (Tue, 14 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/W2W.lua
+   M /trunk/Skins/Default/skin.lua
+   M /trunk/WIM.lua
+   M /trunk/WIM.toc
+
+-- fixed paths... sorry.
+------------------------------------------------------------------------
+r93 | pazza | 2008-10-14 05:09:00 +0000 (Tue, 14 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/WIM.lua
+   M /trunk/WIM.toc
+
+- updated toc for 30000
+------------------------------------------------------------------------
+r92 | pazza | 2008-10-14 04:59:35 +0000 (Tue, 14 Oct 2008) | 3 lines
+Changed paths:
+   A /trunk/.pkgmeta
+   M /trunk/Modules/History.lua
+   M /trunk/Modules/Includes.xml
+   A /trunk/Modules/Negotiate.lua
+   M /trunk/Modules/ShortcutBar.lua
+   A /trunk/Modules/Textures/avatar.tga
+   M /trunk/Modules/Tutorials.lua
+   A /trunk/Modules/W2W.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Skins/Default/skin.lua
+   A /trunk/Skins/Default/w2w.tga
+   A /trunk/Sources/Clear.lua
+   M /trunk/Sources/Includes.xml
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/Sources/Skinner.lua
+   M /trunk/Sources/Socket.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+   A /trunk/WIM.toc
+   D /trunk/WIM_Rewrite.toc
+
+- initial w2w functionality
+- changed toc name to WIM
+- setting up pkgmeta
+------------------------------------------------------------------------
+r91 | pazza | 2008-10-13 16:44:44 +0000 (Mon, 13 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Sources/WindowHandler.lua
+
+- Added WIM.nextColor
+------------------------------------------------------------------------
+r90 | pazza | 2008-10-13 15:14:16 +0000 (Mon, 13 Oct 2008) | 5 lines
+Changed paths:
+   M /trunk/Modules/History.lua
+   M /trunk/Modules/Sounds.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/Sources/Skinner.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+
+- Proper GM support in windows. GM's flow through wow normally and are never passed through WIM's filters. (therefore can not be suppressed).
+- If whispers are being stored in history, a GM will always be logged.
+- GM's are appropriately labeled in history viewer.
+- added font selection in options with option to use suggested settings from skins (on by default).
+- skins can set font by global font objects (ie: ChatFontNormal) or though SmartMediaLib. font paths will not be accepted.
+------------------------------------------------------------------------
+r89 | pazza | 2008-10-11 01:36:08 +0000 (Sat, 11 Oct 2008) | 4 lines
+Changed paths:
+   M /trunk/Modules/History.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/Locale.lua
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/Sources/Options/Options.lua
+   M /trunk/Sources/Options/OptionsTookKit.lua
+
+- locale wasn't detecting enGB correctly.
+- added options ui for history.
+- added delete buttons to history frame.
+- wim wasn't setting last tell target correctly.
+------------------------------------------------------------------------
+r88 | pazza | 2008-10-10 01:18:35 +0000 (Fri, 10 Oct 2008) | 2 lines
+Changed paths:
+   M /trunk/Modules/Emoticons.lua
+   M /trunk/Modules/History.lua
+   M /trunk/Modules/URLHandler.lua
+   M /trunk/Sources/Locale.lua
+
+- Modified how emoticons & urls are processed.
+- History no longer lags the game when loading a large convo.
+------------------------------------------------------------------------
+r87 | pazza | 2008-10-09 21:10:05 +0000 (Thu, 09 Oct 2008) | 3 lines
+Changed paths:
+   M /trunk/Localization/Includes.xml
+   A /trunk/Localization/enGB.lua
+   M /trunk/Modules/History.lua
+   M /trunk/Modules/Menu.lua
+   A /trunk/Modules/Textures/tutorial.tga
+   M /trunk/Modules/Tutorials.lua
+   M /trunk/Sources/Locale.lua
+   M /trunk/Sources/Options/Textures/blipBlue.tga
+
+- added locale type enGB for date formatting reasons.
+- modified graphics on WIM tutorials.
+- updated Locale.lua to determin enGB locale.
+------------------------------------------------------------------------
+r86 | pazza | 2008-10-09 07:34:33 +0000 (Thu, 09 Oct 2008) | 3 lines
+Changed paths:
+   M /trunk/Modules/History.lua
+   M /trunk/Modules/Includes.xml
+   M /trunk/Modules/MinimapIcon.lua
+   M /trunk/Modules/WhisperEngine.lua
+   A /trunk/Modules/ldb.lua
+   M /trunk/Sources/WindowHandler.lua
+
+- fixed bug where history widget kept disappearing.
+- history widget, when clicked, now links to the history viewer.
+- added LibDataBroker support (mainly for Fubar & Titan)
+------------------------------------------------------------------------
+r85 | pazza | 2008-10-08 22:45:16 +0000 (Wed, 08 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/History.lua
+   M /trunk/Sources/WindowHandler.lua
+
+- added search to history (needs a few user input checks)
+------------------------------------------------------------------------
+r84 | pazza | 2008-10-08 20:48:12 +0000 (Wed, 08 Oct 2008) | 2 lines
+Changed paths:
+   M /trunk/Modules/History.lua
+   M /trunk/Sources/WindowHandler.lua
+
+- modifications to message formatting
+- history browsing by realm across multiple characters wasn't working right.
+------------------------------------------------------------------------
+r83 | pazza | 2008-10-08 19:45:16 +0000 (Wed, 08 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/History.lua
+   M /trunk/Sources/WindowHandler.lua
+
+- some widgets weren't triggering events like they should. (Prat Testing)
+------------------------------------------------------------------------
+r82 | pazza | 2008-10-07 03:05:30 +0000 (Tue, 07 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/Filters.lua
+   M /trunk/Modules/History.lua
+   M /trunk/Modules/TimeStamps.lua
+   M /trunk/WIM.lua
+
+- Finished large portion of History Viewer   (/wim history)
+------------------------------------------------------------------------
+r81 | pazza | 2008-10-05 06:12:28 +0000 (Sun, 05 Oct 2008) | 6 lines
+Changed paths:
+   M /trunk/Localization/enUS.lua
+   M /trunk/Modules/Emoticons.lua
+   A /trunk/Modules/History.lua
+   M /trunk/Modules/Includes.xml
+   M /trunk/Modules/Menu.lua
+   A /trunk/Modules/TabManagement.lua
+   M /trunk/Modules/TimeStamps.lua
+   M /trunk/Skins/Default/skin.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+   M /trunk/WIM_Rewrite.toc
+
+-- optimized emoticon module.
+-- Added history module. Records all whispers and shows preview if history exists. Creates history widget and shows when applicable (does not link to history viewer yet since it does not exist).
+-- modified timestamp module.
+-- updated skin table for history widget.
+-- Tab management module created. Just a place holder for now. Does nothing.
+**History still needs options UI.
+------------------------------------------------------------------------
+r80 | pazza | 2008-10-03 02:53:15 +0000 (Fri, 03 Oct 2008) | 4 lines
+Changed paths:
+   M /trunk/Modules/Filters.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/WIM.lua
+
+- filters are now functional (to be tested of course).
+- included are default filters one of which is protected and cannot be deleted.
+- Note: Filter/Level Rules - Are ignored if a window is already open for the user. Window open means you want to talk to the person.
+- Note: Reset your filters by  /script WIM3_Filters = nil; ReloadUI();
+------------------------------------------------------------------------
+r79 | pazza | 2008-10-02 20:59:35 +0000 (Thu, 02 Oct 2008) | 3 lines
+Changed paths:
+   A /trunk/Modules/Filters.lua
+   M /trunk/Modules/Includes.xml
+   M /trunk/Sources/Options/CoreOptions.lua
+   A /trunk/Sources/Options/Textures/down.tga
+   A /trunk/Sources/Options/Textures/up.tga
+   M /trunk/Sources/Socket.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+   M /trunk/WIM_Rewrite.toc
+
+- Some adjustments to socket compression. (not quite finished)
+- Added filter module as well as filter UI. Filters not yet functional however.
+- This build requires a restart (new files).
+------------------------------------------------------------------------
+r78 | pazza | 2008-10-01 14:01:48 +0000 (Wed, 01 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Libs
+
+...
+------------------------------------------------------------------------
+r77 | pazza | 2008-10-01 13:59:22 +0000 (Wed, 01 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Libs
+
+sorry missed one...
+------------------------------------------------------------------------
+r76 | pazza | 2008-10-01 13:43:20 +0000 (Wed, 01 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Libs
+
+- again external update..
+------------------------------------------------------------------------
+r75 | pazza | 2008-10-01 04:06:27 +0000 (Wed, 01 Oct 2008) | 1 line
+Changed paths:
+   M /trunk/Libs
+
+Updated externals.
+------------------------------------------------------------------------
+r74 | pazza | 2008-09-30 21:04:06 +0000 (Tue, 30 Sep 2008) | 3 lines
+Changed paths:
+   M /trunk/Modules/ShortcutBar.lua
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/Sources/Skinner.lua
+   M /trunk/Sources/TabHandler.lua
+   M /trunk/Sources/WindowHandler.lua
+
+-- shortcut bar should be complete. Additional API will be made for it if needed at a later time.
+-- Windows acount for widgets in its size restricting. This prevents widgets hanging off the window when windows are made too small for them.
+
+------------------------------------------------------------------------
+r73 | pazza | 2008-09-30 03:42:22 +0000 (Tue, 30 Sep 2008) | 4 lines
+Changed paths:
+   M /trunk/Modules/Menu.lua
+   M /trunk/Modules/ShortcutBar.lua
+   M /trunk/Skins/Default/skin.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+
+-- modified shortcut bar skin schema allowing for spacing between buttons.
+-- 'add friend'' shortcut is now shown when applicable.
+-- changed order of operations in math equation to avoid chance of dividing by 0.
+-- friend & guild cache now recycles their own tables. make gc happier.
+------------------------------------------------------------------------
+r72 | pazza | 2008-09-29 22:21:07 +0000 (Mon, 29 Sep 2008) | 2 lines
+Changed paths:
+   M /trunk/Modules/Includes.xml
+   A /trunk/Modules/ShortcutBar.lua
+   A /trunk/Skins/Default/shortcuts_frame.tga
+   M /trunk/Skins/Default/skin.lua
+   M /trunk/Sources/Skinner.lua
+   M /trunk/Sources/WindowHandler.lua
+
+- initial shortcut bar widget.
+- additions to the widget api.
+------------------------------------------------------------------------
+r71 | pazza | 2008-09-28 18:29:30 +0000 (Sun, 28 Sep 2008) | 2 lines
+Changed paths:
+   M /trunk/WIM.lua
+
+- Fixed bug where events where being processed prior to WIM receiving its saved variables.
+- Fixed: Modules where getting passed events even when WIM was disabled.
+------------------------------------------------------------------------
+r70 | pazza | 2008-09-26 21:53:49 +0000 (Fri, 26 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/Sources/Socket.lua
+   M /trunk/Sources/TabHandler.lua
+   M /trunk/Sources/WindowHandler.lua
+
+- fixed error caused when closing a window from its tab.
+------------------------------------------------------------------------
+r69 | pazza | 2008-09-26 19:22:32 +0000 (Fri, 26 Sep 2008) | 2 lines
+Changed paths:
+   M /trunk/Modules/Menu.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/WindowHandler.lua
+
+- Modified Menu status visuals and text color.
+- removed 255 message length limit from WIM's message boxes. Messages are automatically split if they are over the allowed length.
+------------------------------------------------------------------------
+r68 | pazza | 2008-09-26 05:57:48 +0000 (Fri, 26 Sep 2008) | 2 lines
+Changed paths:
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/Hooks.lua
+   M /trunk/Sources/Options/OptionsTookKit.lua
+   M /trunk/Sources/Socket.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+
+- Added handling of chat_sys_msg events in order to catch/suppress user not online, friend when off & online messages.
+- fixed bug in hooks, caused error when tab key was pressed in chateditbox.
+------------------------------------------------------------------------
+r67 | pazza | 2008-09-25 22:10:12 +0000 (Thu, 25 Sep 2008) | 3 lines
+Changed paths:
+   M /trunk/Modules/MinimapIcon.lua
+   M /trunk/Skins/Default/skin.lua
+   M /trunk/Skins/Default/tab_normal.tga
+   M /trunk/Skins/Default/tab_selected.tga
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/Sources/Options/OptionsTookKit.lua
+   M /trunk/Sources/TabHandler.lua
+   M /trunk/Sources/ToolBox.lua
+   M /trunk/Sources/WindowHandler.lua
+
+- Modified visuals in options frame work - nested check boxes.
+- Added option to show unread messages on right click of minimap icon (disabled by default)
+- fixed tab graphics to conform to skin schema.
+------------------------------------------------------------------------
+r66 | pazza | 2008-09-25 20:42:23 +0000 (Thu, 25 Sep 2008) | 5 lines
+Changed paths:
+   M /trunk/Skins/Default/skin.lua
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/Sources/Options/Options.lua
+   M /trunk/Sources/Skinner.lua
+   M /trunk/Sources/WindowHandler.lua
+
+- Slightly modified how skins are loaded to account for class color.
+- Added some globals to the skinner. (mainly for options sake).
+- Added option to set skin. Skinners can start testing. We'll improve on it as you need.
+- Made classic skin's styles into independent skins.
+- Option's Disable/Enable functions now give a more modal feel when displaying color picker.
+------------------------------------------------------------------------
+r65 | pazza | 2008-09-25 16:06:16 +0000 (Thu, 25 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/Sources/WindowHandler.lua
+
+- Fixed bug when resizing windows and depressing shift before completed.
+------------------------------------------------------------------------
+r64 | pazza | 2008-09-25 05:40:41 +0000 (Thu, 25 Sep 2008) | 2 lines
+Changed paths:
+   M /trunk/Sources/Options/OptionsTookKit.lua
+   M /trunk/Sources/Socket.lua
+
+- fixed error on window behavior screen on wotlk (thank you stewart)
+- sockets now uses the huffman compression method to send data. (thank you stewart for adding the encode/decode functions)
+------------------------------------------------------------------------
+r63 | pazza | 2008-09-24 03:34:33 +0000 (Wed, 24 Sep 2008) | 7 lines
+Changed paths:
+   M /trunk/Localization/enUS.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Skins/Default/skin.lua
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/Sources/Options/Options.lua
+   M /trunk/Sources/Options/OptionsTookKit.lua
+   M /trunk/Sources/TabHandler.lua
+   M /trunk/Sources/WindowHandler.lua
+
+-- Added window type "demo"
+-- Added option to set default window spawn point.
+-- Added cascading options (may need improvement).
+-- Added option to disable who lookups.
+-- Modified skin table for tabs and added scroll arrows.
+-- Messages are no longer lost when received while window is moving.
+-- random bug fixes reported which i can't remember atm.
+------------------------------------------------------------------------
+r62 | pazza | 2008-09-23 02:33:53 +0000 (Tue, 23 Sep 2008) | 2 lines
+Changed paths:
+   M /trunk/Modules/MinimapIcon.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/WindowHandler.lua
+
+- messages are no longer lost when a message is received while moving windows.
+- minimap alerts are now triggered when messages are received when window is hidden.
+------------------------------------------------------------------------
+r61 | pazza | 2008-09-22 22:16:31 +0000 (Mon, 22 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/URLHandler.lua
+   M /trunk/Sources/Options/OptionsTookKit.lua
+   M /trunk/Sources/Socket.lua
+   M /trunk/Sources/WindowHandler.lua
+
+Fixed this/self issue between game versions.
+------------------------------------------------------------------------
+r60 | pazza | 2008-09-22 21:07:51 +0000 (Mon, 22 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/Sources/Socket.lua
+   M /trunk/Sources/Stewmat.lua
+
+socket testing
+------------------------------------------------------------------------
+r59 | pazza | 2008-09-22 19:58:23 +0000 (Mon, 22 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/Sources/Socket.lua
+
+socket test.
+------------------------------------------------------------------------
+r58 | pazza | 2008-09-22 16:23:05 +0000 (Mon, 22 Sep 2008) | 2 lines
+Changed paths:
+   M /trunk/Libs
+   M /trunk/Libs/Includes.xml
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/Includes.xml
+   A /trunk/Sources/Socket.lua
+   M /trunk/Sources/Stewmat.lua
+   M /trunk/WIM.lua
+
+Attached a couple libraries.
+created a socket management segment for WIM transmissions.
+------------------------------------------------------------------------
+r57 | pazza | 2008-09-19 15:14:51 +0000 (Fri, 19 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/Menu.lua
+   M /trunk/Sources/Options/Options.lua
+   M /trunk/Sources/Options/Textures/blipAmber.tga
+   M /trunk/Sources/Options/Textures/blipBlue.tga
+   M /trunk/Sources/Options/Textures/blipClear.tga
+   M /trunk/Sources/Options/Textures/blipRed.tga
+   M /trunk/Sources/Options/Textures/close.tga
+
+Modified some textures
+------------------------------------------------------------------------
+r56 | pazza | 2008-09-18 22:10:38 +0000 (Thu, 18 Sep 2008) | 3 lines
+Changed paths:
+   M /trunk/Modules/Menu.lua
+   M /trunk/Sources/Options/Options.lua
+   A /trunk/Sources/Options/Textures/blipAmber.tga
+   A /trunk/Sources/Options/Textures/blipBlue.tga
+   A /trunk/Sources/Options/Textures/blipClear.tga
+   A /trunk/Sources/Options/Textures/blipRed.tga
+   A /trunk/Sources/Options/Textures/close.tga
+
+- added close button to options
+- added status icons to menu (only 2 states atm)
+- added a few images files. (restart required)
+------------------------------------------------------------------------
+r55 | pazza | 2008-09-18 20:42:10 +0000 (Thu, 18 Sep 2008) | 3 lines
+Changed paths:
+   M /trunk/Modules/URLHandler.lua
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/Sources/Options/Options.lua
+   M /trunk/Sources/Options/OptionsTookKit.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+
+- Added more options & objects to the option toolkit.
+- changed url module to run from it's own name space.
+- added Enable() and Disable() to options frame when using modals.
+------------------------------------------------------------------------
+r54 | pazza | 2008-09-18 04:49:49 +0000 (Thu, 18 Sep 2008) | 2 lines
+Changed paths:
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/Sources/Options/OptionsTookKit.lua
+   M /trunk/Sources/WindowHandler.lua
+
+- More work on the Options UI.
+- You must call   /wim reset   to revert to default settings.
+------------------------------------------------------------------------
+r53 | pazza | 2008-09-17 22:01:38 +0000 (Wed, 17 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/Localization/enUS.lua
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/Sources/Options/OptionsTookKit.lua
+
+- Added initial Whisper options UI
+------------------------------------------------------------------------
+r52 | pazza | 2008-09-17 07:33:05 +0000 (Wed, 17 Sep 2008) | 4 lines
+Changed paths:
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Skins/Default/skin.lua
+   M /trunk/Sources/Skinner.lua
+   M /trunk/Sources/SlashHandler.lua
+   M /trunk/Sources/WindowHandler.lua
+
+- turned off debugging text.
+- fixed suppression of messages.
+- further modified skin schema.
+- removed traces of skin styles.
+------------------------------------------------------------------------
+r51 | pazza | 2008-09-17 02:55:56 +0000 (Wed, 17 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/Skins/Default/skin.lua
+   M /trunk/Sources/Skinner.lua
+   M /trunk/Sources/TabHandler.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+
+Skins no longer have styles: Updated necessary code & skin to reflect this change.
+------------------------------------------------------------------------
+r50 | pazza | 2008-09-17 02:09:21 +0000 (Wed, 17 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/Sources/Stewmat.lua
+
+Added Focus rules and refined pop rules for tabbed windows.
+------------------------------------------------------------------------
+r49 | pazza | 2008-09-17 00:52:40 +0000 (Wed, 17 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/Sources/Stewmat.lua
+
+One more for Stew.
+------------------------------------------------------------------------
+r48 | pazza | 2008-09-17 00:49:32 +0000 (Wed, 17 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/Menu.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/Includes.xml
+   A /trunk/Sources/Stewmat.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+
+Some fun with Stew.
+------------------------------------------------------------------------
+r47 | pazza | 2008-09-16 05:43:33 +0000 (Tue, 16 Sep 2008) | 6 lines
+Changed paths:
+   M /trunk/Modules/Emoticons.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/TabHandler.lua
+   M /trunk/Sources/WindowHandler.lua
+
+- fixed bug with minimizing/restoring tabbed windows
+- fixed bug history/emoticon conflict
+- added fontstring to tab buttons (work in progress)
+- modified how windows are referenced in several places
+- changed pop_rule structure & added sever more settings (no ui yet).
+- tab textures read from skin table.
+------------------------------------------------------------------------
+r46 | pazza | 2008-09-15 22:05:00 +0000 (Mon, 15 Sep 2008) | 2 lines
+Changed paths:
+   M /trunk/Modules/Includes.xml
+   A /trunk/Modules/TimeStamps.lua
+   M /trunk/Skins/Default/class_icons.tga
+   M /trunk/Skins/Default/skin.lua
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/Sources/Options/OptionsTookKit.lua
+   M /trunk/Sources/ToolBox.lua
+   M /trunk/Sources/WindowHandler.lua
+
+- Added TimeStamp Module & options
+- Added class icon for Death Knight.
+------------------------------------------------------------------------
+r45 | pazza | 2008-09-15 15:27:20 +0000 (Mon, 15 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/WIM.lua
+
+Fixed error caused by chat filter.
+------------------------------------------------------------------------
+r44 | pazza | 2008-09-15 02:24:31 +0000 (Mon, 15 Sep 2008) | 2 lines
+Changed paths:
+   M /trunk/Modules/Menu.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/WindowHandler.lua
+
+convo menu auto hides now like a normal menu.
+fixed bug when closing windows from convo menu.
+------------------------------------------------------------------------
+r43 | pazza | 2008-09-14 09:56:38 +0000 (Sun, 14 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/Includes.xml
+   A /trunk/Modules/Menu.lua
+   M /trunk/Modules/MinimapIcon.lua
+   A /trunk/Modules/Textures
+   A /trunk/Modules/Textures/Menu.tga
+   A /trunk/Modules/Textures/Menu_bg.tga
+   A /trunk/Modules/Textures/xNormal.tga
+   A /trunk/Modules/Textures/xPressed.tga
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/WindowHandler.lua
+
+started convo menu.
+------------------------------------------------------------------------
+r42 | pazza | 2008-09-12 20:20:39 +0000 (Fri, 12 Sep 2008) | 2 lines
+Changed paths:
+   M /trunk/Modules/Tutorials.lua
+   M /trunk/Modules/URLHandler.lua
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/Sources/Options/OptionsTookKit.lua
+   M /trunk/Sources/SlashHandler.lua
+   M /trunk/Sources/TabHandler.lua
+   M /trunk/Sources/ToolBox.lua
+   M /trunk/Sources/WindowHandler.lua
+
+Added MenuDropDown obj to options framework.
+finished message formatting category in options.
+------------------------------------------------------------------------
+r41 | pazza | 2008-09-11 22:52:46 +0000 (Thu, 11 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/Includes.xml
+   M /trunk/Modules/MinimapIcon.lua
+   A /trunk/Modules/Tutorials.lua
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/Sources/Options/Options.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+
+Added Tutorial module, can be disabled from WIM's options.
+------------------------------------------------------------------------
+r40 | pazza | 2008-09-11 08:52:50 +0000 (Thu, 11 Sep 2008) | 2 lines
+Changed paths:
+   M /trunk/Modules/URLHandler.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/Sources/Options/Options.lua
+   M /trunk/Sources/Options/OptionsTookKit.lua
+   M /trunk/Sources/WindowHandler.lua
+
+New message formatting system and registering.
+continued work with options.
+------------------------------------------------------------------------
+r39 | pazza | 2008-09-11 00:30:49 +0000 (Thu, 11 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/Localization/enUS.lua
+   M /trunk/Modules/URLHandler.lua
+   M /trunk/Sources/Includes.xml
+   M /trunk/Sources/Locale.lua
+   M /trunk/Sources/Options/CoreOptions.lua
+   M /trunk/Sources/Options/Options.lua
+   M /trunk/Sources/Options/OptionsTookKit.lua
+   A /trunk/Sources/SlashHandler.lua
+   M /trunk/Sources/ToolBox.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+
+added slash command handler.
+------------------------------------------------------------------------
+r38 | pazza | 2008-09-10 07:44:47 +0000 (Wed, 10 Sep 2008) | 1 line
+Changed paths:
+   D /trunk/Localization/README-Translators.txt
+   D /trunk/Localization/localization.cn.lua
+   D /trunk/Localization/localization.de.lua
+   D /trunk/Localization/localization.es.lua
+   D /trunk/Localization/localization.fr.lua
+   D /trunk/Localization/localization.kr.lua
+   D /trunk/Localization/localization.lua
+   D /trunk/Localization/localization.tw.lua
+
+update removed files.
+------------------------------------------------------------------------
+r37 | pazza | 2008-09-10 07:43:49 +0000 (Wed, 10 Sep 2008) | 3 lines
+Changed paths:
+   M /trunk/Localization/Includes.xml
+   A /trunk/Localization/deDE.lua
+   A /trunk/Localization/enUS.lua
+   A /trunk/Localization/esES.lua
+   A /trunk/Localization/frFR.lua
+   A /trunk/Localization/koKR.lua
+   A /trunk/Localization/ruRU.lua
+   A /trunk/Localization/zhCN.lua
+   A /trunk/Localization/zhTW.lua
+   M /trunk/Modules/MinimapIcon.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Skins/Default/skin.lua
+   M /trunk/Sources/Constants.lua
+   M /trunk/Sources/Includes.xml
+   A /trunk/Sources/Locale.lua
+   A /trunk/Sources/Options
+   A /trunk/Sources/Options/CoreOptions.lua
+   A /trunk/Sources/Options/Options.lua
+   A /trunk/Sources/Options/OptionsTookKit.lua
+   A /trunk/Sources/Options/Textures
+   A /trunk/Sources/Options/Textures/Frame.tga
+   A /trunk/Sources/Options/Textures/Frame_Background.tga
+   M /trunk/Sources/Skinner.lua
+   M /trunk/Sources/ToolBox.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+   M /trunk/WIM_Rewrite.toc
+
+First implementation of options
+handles death knight class - (need to update icon for dk)
+new localization structure. Removed all translations, too many changes, going to need new ones.
+------------------------------------------------------------------------
+r36 | pazza | 2008-09-05 23:54:34 +0000 (Fri, 05 Sep 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/Skinner.lua
+
+fixed db is nil error
+------------------------------------------------------------------------
+r35 | pazza | 2008-09-04 22:42:03 +0000 (Thu, 04 Sep 2008) | 3 lines
+Changed paths:
+   M /trunk/Localization/localization.lua
+   M /trunk/Modules/Emoticons.lua
+   M /trunk/Modules/MinimapIcon.lua
+   M /trunk/Modules/Sounds.lua
+   M /trunk/Modules/URLHandler.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Skins/Default/skin.lua
+   M /trunk/Sources/Constants.lua
+   A /trunk/Sources/Namespace.lua
+   M /trunk/Sources/Skinner.lua
+   M /trunk/Sources/StateHandler.lua
+   M /trunk/Sources/TabHandler.lua
+   M /trunk/Sources/ToolBox.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+   M /trunk/WIM_Rewrite.toc
+
+-the core addon as well as most modules have been converted to use WIM's namespace instead of global.
+-Added window animations.
+-some more skinning tweaks.
+------------------------------------------------------------------------
+r34 | pazza | 2008-08-31 15:46:44 +0000 (Sun, 31 Aug 2008) | 2 lines
+Changed paths:
+   M /trunk/Modules/Emoticons.lua
+   M /trunk/Modules/MinimapIcon.lua
+   M /trunk/Skins/Default/skin.lua
+   M /trunk/Sources/MessageWindows.lua
+   M /trunk/Sources/Skinner.lua
+   M /trunk/Sources/StateHandler.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+
+- modified skin schema. Trying to make it more intuitive and at the same time adding more flexability.
+- current state is now stored between sessions. This avoids that second or two delay where certain events are fired after login.
+------------------------------------------------------------------------
+r33 | pazza | 2008-08-20 05:46:00 +0000 (Wed, 20 Aug 2008) | 5 lines
+Changed paths:
+   A /trunk/Modules/Emoticons.lua
+   M /trunk/Modules/Includes.xml
+   M /trunk/Modules/MinimapIcon.lua
+   A /trunk/Skins/Default/resize.tga
+   M /trunk/Skins/Default/skin.lua
+   M /trunk/Sources/Skinner.lua
+   M /trunk/Sources/StateHandler.lua
+   M /trunk/Sources/TabHandler.lua
+   M /trunk/Sources/ToolBox.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+
+Changed Skin schema & added new method of positioning of widgets.
+Added a pseudo widget "resize". Although it appears as a widget only one of these objects exist and is shared between all windows. Holding shift while hovering over the window will allow you to dynamically size it.
+Added visual effect to close button. The default action of hiding the window is more intuitive.
+Modified how skins are applied to windows. At this time, 3rd party skins can not be loaded.
+Added emoticon parsing by registering it's modifier with WIM.
+------------------------------------------------------------------------
+r32 | pazza | 2008-08-15 00:04:18 +0000 (Fri, 15 Aug 2008) | 1 line
+Changed paths:
+   A /trunk/Modules/Sounds.lua
+   A /trunk/Modules/URLHandler.lua
+   M /trunk/WIM.lua
+
+forgot to add some files to svn
+------------------------------------------------------------------------
+r31 | pazza | 2008-08-14 21:53:17 +0000 (Thu, 14 Aug 2008) | 1 line
+Changed paths:
+   D /trunk/Sources/URL.lua
+
+forgot to remove from workplace.
+------------------------------------------------------------------------
+r30 | pazza | 2008-08-14 21:52:34 +0000 (Thu, 14 Aug 2008) | 4 lines
+Changed paths:
+   M /trunk/Modules/Includes.xml
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/Includes.xml
+   M /trunk/Sources/ToolBox.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+
+Made Sounds into a module.
+Added URLHandler module.
+WhisperEngine now adds 4 functions to the Module Schema. Module:OnEvent_Whsper(eventIem), Module:OnEvent_WhisperInform(eventItem), Module:PostEvent_Whisper(args[...]), Module:PostEvent_WhisperInform(args[...]);
+Removed old URL.lua from source directory.
+------------------------------------------------------------------------
+r29 | pazza | 2008-08-14 18:35:21 +0000 (Thu, 14 Aug 2008) | 1 line
+Changed paths:
+   A /trunk/Modules/MinimapIcon.lua
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/Hooks.lua
+   M /trunk/Sources/URL.lua
+
+Added minimapIcon module... Other tweaks and fixes.
+------------------------------------------------------------------------
+r28 | pazza | 2008-08-13 18:29:59 +0000 (Wed, 13 Aug 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/Includes.xml
+   M /trunk/Modules/WhisperEngine.lua
+   A /trunk/Skins/Default/minimap.tga
+   M /trunk/WIM.lua
+   M /trunk/WIM_Rewrite.toc
+
+initial stages of minimap icon control
+------------------------------------------------------------------------
+r27 | pazza | 2008-08-11 21:56:47 +0000 (Mon, 11 Aug 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/TabHandler.lua
+   M /trunk/Sources/ToolBox.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+
+Fixed some bugs with tabs. Added an event handling system for modules. added chat supression
+------------------------------------------------------------------------
+r26 | pazza | 2008-08-10 16:49:31 +0000 (Sun, 10 Aug 2008) | 1 line
+Changed paths:
+   M /trunk/Libs/Includes.xml
+   M /trunk/WIM.lua
+   M /trunk/WIM_Rewrite.toc
+
+Updated toc and lib loading order. WIM3 now works on both WoW 2.0 + 3.0
+------------------------------------------------------------------------
+r25 | pazza | 2008-08-10 16:23:20 +0000 (Sun, 10 Aug 2008) | 1 line
+Changed paths:
+   M /trunk/Libs
+
+Libs was missing Deformat-2.0
+------------------------------------------------------------------------
+r24 | pazza | 2008-08-10 16:14:10 +0000 (Sun, 10 Aug 2008) | 1 line
+Changed paths:
+   M /trunk/Libs
+   M /trunk/Libs/Includes.xml
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+
+Lib folder was missing external AceLibrary
+------------------------------------------------------------------------
+r23 | pazza | 2008-08-10 15:23:44 +0000 (Sun, 10 Aug 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Skins/Default/skin.lua
+   M /trunk/Sources/StateHandler.lua
+   M /trunk/Sources/TabHandler.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+
+Some conversions to work with wotlk
+------------------------------------------------------------------------
+r22 | pazza | 2008-08-06 07:33:14 +0000 (Wed, 06 Aug 2008) | 1 line
+Changed paths:
+   M /trunk/Skins/Default/skin.lua
+   M /trunk/Sources/TabHandler.lua
+   M /trunk/Sources/WindowHandler.lua
+
+More with Tabs. Dragging and dropping tabs between tab groups. Dynamic tab group creation.
+------------------------------------------------------------------------
+r21 | pazza | 2008-08-05 19:13:11 +0000 (Tue, 05 Aug 2008) | 1 line
+Changed paths:
+   M /trunk/Skins/Default/skin.lua
+   A /trunk/Skins/Default/tab_left_arrow.tga
+   A /trunk/Skins/Default/tab_normal.tga
+   A /trunk/Skins/Default/tab_right_arrow.tga
+   A /trunk/Skins/Default/tab_selected.tga
+   M /trunk/Sources/Includes.xml
+   A /trunk/Sources/TabHandler.lua
+   M /trunk/Sources/WindowHandler.lua
+
+syntax error correction
+------------------------------------------------------------------------
+r20 | pazza | 2008-08-04 23:18:05 +0000 (Mon, 04 Aug 2008) | 3 lines
+Changed paths:
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/StateHandler.lua
+   M /trunk/Sources/WindowHandler.lua
+
+Window pop-ups now follow "state" based rules.
+Interception of slash commands added and follow "state" based rules.
+Added module event OnStateChange(state)
+------------------------------------------------------------------------
+r19 | pazza | 2008-07-31 08:22:24 +0000 (Thu, 31 Jul 2008) | 1 line
+Changed paths:
+   M /trunk/Libs
+
+added astrolabe svn external
+------------------------------------------------------------------------
+r18 | pazza | 2008-07-31 08:18:43 +0000 (Thu, 31 Jul 2008) | 1 line
+Changed paths:
+   D /trunk/Libs/Astrolabe
+
+remove static lib ref
+------------------------------------------------------------------------
+r17 | pazza | 2008-07-31 08:04:44 +0000 (Thu, 31 Jul 2008) | 1 line
+Changed paths:
+   D /trunk/Libs/CallbackHandler-1.0
+   D /trunk/Libs/LibSharedMedia-3.0
+   D /trunk/Libs/LibStub
+
+removing static lib refrences
+------------------------------------------------------------------------
+r16 | pazza | 2008-07-31 07:54:48 +0000 (Thu, 31 Jul 2008) | 1 line
+Changed paths:
+   M /trunk/Libs
+
+added some externals for libs
+------------------------------------------------------------------------
+r15 | pazza | 2008-07-31 07:43:33 +0000 (Thu, 31 Jul 2008) | 1 line
+Changed paths:
+   D /trunk/Test
+
+rm test
+------------------------------------------------------------------------
+r14 | pazza | 2008-07-31 07:42:56 +0000 (Thu, 31 Jul 2008) | 1 line
+Changed paths:
+   A /trunk/Test
+
+test
+------------------------------------------------------------------------
+r13 | pazza | 2008-07-31 07:38:48 +0000 (Thu, 31 Jul 2008) | 1 line
+Changed paths:
+   M /trunk
+
+rm test folder
+------------------------------------------------------------------------
+r12 | pazza | 2008-07-31 06:34:03 +0000 (Thu, 31 Jul 2008) | 1 line
+Changed paths:
+   M /trunk
+
+testing something...
+------------------------------------------------------------------------
+r11 | pazza | 2008-07-31 05:46:37 +0000 (Thu, 31 Jul 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+
+window object layout and interaction.
+------------------------------------------------------------------------
+r10 | pazza | 2008-07-31 02:11:44 +0000 (Thu, 31 Jul 2008) | 1 line
+Changed paths:
+   M /trunk/Libs/Includes.xml
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/Constants.lua
+   A /trunk/Sources/Hooks.lua
+   M /trunk/Sources/Includes.xml
+   M /trunk/Sources/Skinner.lua
+   M /trunk/Sources/ToolBox.lua
+   A /trunk/Sources/URL.lua
+   M /trunk/Sources/WindowHandler.lua
+   M /trunk/WIM.lua
+   M /trunk/WIM_Rewrite.toc
+
+progressing...
+------------------------------------------------------------------------
+r9 | pazza | 2008-07-29 21:14:54 +0000 (Tue, 29 Jul 2008) | 1 line
+Changed paths:
+   M /trunk/Modules/WhisperEngine.lua
+   M /trunk/Sources/WindowHandler.lua
+
+wim widget additions...
+------------------------------------------------------------------------
+r8 | pazza | 2008-07-28 23:55:05 +0000 (Mon, 28 Jul 2008) | 1 line
+Changed paths:
+   A /trunk/Libs
+   A /trunk/Libs/Astrolabe
+   A /trunk/Libs/Astrolabe/Astrolabe.lua
+   A /trunk/Libs/Astrolabe/AstrolabeMapMonitor.lua
+   A /trunk/Libs/Astrolabe/DongleStub.lua
+   A /trunk/Libs/Astrolabe/Load.xml
+   A /trunk/Libs/Astrolabe/lgpl.txt
+   A /trunk/Libs/CallbackHandler-1.0
+   A /trunk/Libs/CallbackHandler-1.0/CallbackHandler-1.0.lua
+   A /trunk/Libs/Includes.xml
+   A /trunk/Libs/LibSharedMedia-3.0
+   A /trunk/Libs/LibSharedMedia-3.0/LibSharedMedia-3.0.lua
+   A /trunk/Libs/LibSharedMedia-3.0/lib.xml
+   A /trunk/Libs/LibStub
+   A /trunk/Libs/LibStub/LibStub.lua
+   D /trunk/hello.txt
+
+adding libs
+------------------------------------------------------------------------
+r7 | pazza | 2008-07-28 23:42:57 +0000 (Mon, 28 Jul 2008) | 1 line
+Changed paths:
+   A /trunk/Skins
+   A /trunk/Skins/Default
+   A /trunk/Skins/Default/Emoticons
+   A /trunk/Skins/Default/Emoticons/angel.tga
+   A /trunk/Skins/Default/Emoticons/angry.tga
+   A /trunk/Skins/Default/Emoticons/bear.tga
+   A /trunk/Skins/Default/Emoticons/beer.tga
+   A /trunk/Skins/Default/Emoticons/biggrin.tga
+   A /trunk/Skins/Default/Emoticons/blush.tga
+   A /trunk/Skins/Default/Emoticons/boom.tga
+   A /trunk/Skins/Default/Emoticons/brokenheart.tga
+   A /trunk/Skins/Default/Emoticons/brow.tga
+   A /trunk/Skins/Default/Emoticons/callme.tga
+   A /trunk/Skins/Default/Emoticons/coffee.tga
+   A /trunk/Skins/Default/Emoticons/cool.tga
+   A /trunk/Skins/Default/Emoticons/cry.tga
+   A /trunk/Skins/Default/Emoticons/devil.tga
+   A /trunk/Skins/Default/Emoticons/doh.tga
+   A /trunk/Skins/Default/Emoticons/drunk.tga
+   A /trunk/Skins/Default/Emoticons/duck.tga
+   A /trunk/Skins/Default/Emoticons/dull.tga
+   A /trunk/Skins/Default/Emoticons/dumb.tga
+   A /trunk/Skins/Default/Emoticons/dumbstruck.tga
+   A /trunk/Skins/Default/Emoticons/eat.tga
+   A /trunk/Skins/Default/Emoticons/envy.tga
+   A /trunk/Skins/Default/Emoticons/evil.tga
+   A /trunk/Skins/Default/Emoticons/finger.tga
+   A /trunk/Skins/Default/Emoticons/flex.tga
+   A /trunk/Skins/Default/Emoticons/flower.tga
+   A /trunk/Skins/Default/Emoticons/glass.bmp
+   A /trunk/Skins/Default/Emoticons/glass.tga
+   A /trunk/Skins/Default/Emoticons/heart.tga
+   A /trunk/Skins/Default/Emoticons/hi.tga
+   A /trunk/Skins/Default/Emoticons/hihi.tga
+   A /trunk/Skins/Default/Emoticons/kiss.tga
+   A /trunk/Skins/Default/Emoticons/martini.tga
+   A /trunk/Skins/Default/Emoticons/mmm.tga
+   A /trunk/Skins/Default/Emoticons/money.tga
+   A /trunk/Skins/Default/Emoticons/mooning.tga
+   A /trunk/Skins/Default/Emoticons/nervous.tga
+   A /trunk/Skins/Default/Emoticons/ninja.tga
+   A /trunk/Skins/Default/Emoticons/no.tga
+   A /trunk/Skins/Default/Emoticons/ohh.tga
+   A /trunk/Skins/Default/Emoticons/phone.tga
+   A /trunk/Skins/Default/Emoticons/puke.tga
+   A /trunk/Skins/Default/Emoticons/rain.tga
+   A /trunk/Skins/Default/Emoticons/rock.tga
+   A /trunk/Skins/Default/Emoticons/sad.tga
+   A /trunk/Skins/Default/Emoticons/sealed.tga
+   A /trunk/Skins/Default/Emoticons/smile.tga
+   A /trunk/Skins/Default/Emoticons/smoke.tga
+   A /trunk/Skins/Default/Emoticons/speechless.tga
+   A /trunk/Skins/Default/Emoticons/tired.tga
+   A /trunk/Skins/Default/Emoticons/wait.tga
+   A /trunk/Skins/Default/Emoticons/wasntme.tga
+   A /trunk/Skins/Default/Emoticons/wink.tga
+   A /trunk/Skins/Default/Emoticons/yes.bmp
+   A /trunk/Skins/Default/Emoticons/yes.tga
+   A /trunk/Skins/Default/Emoticons/zipper.tga
+   A /trunk/Skins/Default/class_icons.tga
+   A /trunk/Skins/Default/message_window.tga
+   A /trunk/Skins/Default/message_window_blue.tga
+   A /trunk/Skins/Default/message_window_green.tga
+   A /trunk/Skins/Default/message_window_red.tga
+   A /trunk/Skins/Default/message_window_yellow.tga
+   A /trunk/Skins/Default/skin.lua
+   A /trunk/Skins/Default/skin.toc
+   A /trunk/Skins/Default/skin.xml
+   A /trunk/Sounds
+   A /trunk/Sounds/wisp.wav
+   A /trunk/Sources
+   A /trunk/Sources/Constants.lua
+   A /trunk/Sources/Emoticons.lua
+   A /trunk/Sources/Includes.xml
+   A /trunk/Sources/MessageWindows.lua
+   A /trunk/Sources/Skinner.lua
+   A /trunk/Sources/StateHandler.lua
+   A /trunk/Sources/ToolBox.lua
+   A /trunk/Sources/WindowHandler.lua
+
+...
+------------------------------------------------------------------------
+r6 | pazza | 2008-07-28 23:32:24 +0000 (Mon, 28 Jul 2008) | 1 line
+Changed paths:
+   A /trunk/Modules
+   A /trunk/Modules/Includes.xml
+   A /trunk/Modules/WhisperEngine.lua
+
+some more files less libs till i figure out how to link them.
+------------------------------------------------------------------------
+r5 | pazza | 2008-07-28 22:46:26 +0000 (Mon, 28 Jul 2008) | 1 line
+Changed paths:
+   A /trunk/Localization
+   A /trunk/Localization/Includes.xml
+   A /trunk/Localization/README-Translators.txt
+   A /trunk/Localization/localization.cn.lua
+   A /trunk/Localization/localization.de.lua
+   A /trunk/Localization/localization.es.lua
+   A /trunk/Localization/localization.fr.lua
+   A /trunk/Localization/localization.kr.lua
+   A /trunk/Localization/localization.lua
+   A /trunk/Localization/localization.tw.lua
+
+Initial Project.
+------------------------------------------------------------------------
+r4 | pazza | 2008-07-28 22:36:59 +0000 (Mon, 28 Jul 2008) | 1 line
+Changed paths:
+   A /trunk/WIM.lua
+
+test 2
+------------------------------------------------------------------------
+r3 | pazza | 2008-07-28 22:34:35 +0000 (Mon, 28 Jul 2008) | 1 line
+Changed paths:
+   A /trunk/WIM_Rewrite.toc
+
+test
+------------------------------------------------------------------------
+r2 | pazza | 2008-07-28 22:34:09 +0000 (Mon, 28 Jul 2008) | 1 line
+Changed paths:
+   A /trunk/hello.txt
+
+hello
+------------------------------------------------------------------------
+r1 | root | 2008-07-28 20:19:52 +0000 (Mon, 28 Jul 2008) | 1 line
+Changed paths:
+   A /branches
+   A /tags
+   A /trunk
+
+"wim-3/mainline: Initial Import"
+------------------------------------------------------------------------
